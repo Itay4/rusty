@@ -29,7 +29,7 @@ async fn main() -> std::io::Result<()> {
     let db_conn = PgPoolOptions::new()
         .max_connections(5)
         .connect_timeout(Duration::from_secs(2))
-        .connect(database_url.as_str()) // <- Use the str version of database_url variable.
+        .connect(database_url.as_str())
         .await
         .expect("failed connecting to db");
 
